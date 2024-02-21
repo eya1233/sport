@@ -1,0 +1,40 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Participation{% endblock %}
+
+{% block body %}
+    <h1>Participation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ participation.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ participation.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ participation.prenom }}</td>
+            </tr>
+           <tr>
+                <th>Event</th>
+                <td>{{ participation.event }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ participation.tel }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ participation.date ? participation.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_participation_indexb') }}">back to list</a>
+
+
+{% endblock %}

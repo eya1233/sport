@@ -1,0 +1,14 @@
+
+
+
+{{ form_start(form,{attr:{novalidate:'novalidate'}}) }}
+
+
+{# Your Twig template where you render the form #}
+
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
