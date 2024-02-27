@@ -3,40 +3,43 @@
 {% block title %}Participation{% endblock %}
 
 {% block body %}
-    <h1>Participation</h1>
+    <body style="background-color: black; color: white;">
+        <h1 style="color: white;">Participation</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ participation.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ participation.nom }}</td>
-            </tr>
-            <tr>
-                <th>Prenom</th>
-                <td>{{ participation.prenom }}</td>
-            </tr>
-           <tr>
-                <th>Event</th>
-                <td>{{ participation.event }}</td>
-            </tr>
-            <tr>
-                <th>Tel</th>
-                <td>{{ participation.tel }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{ participation.date ? participation.date|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <tbody>
+                <tr style="color: white;">
+    <th>Id</th>
+    <td>{{ participation.id }}</td>
+</tr>
 
-    <a href="{{ path('app_participation_index') }}">back to list</a>
+                <tr style="color: white;">
+                    <th>Nom</th>
+                    <td>{{ participation.nom }}</td>
+                </tr>
+                <tr style="color: white;">
+                    <th>Prenom</th>
+                    <td>{{ participation.prenom }}</td>
+                </tr>
+                <tr style="color: white;">
+                    <th>événement</th>
+                    <td>{{ participation.event }}</td>
+                </tr>
+                <tr style="color: white;">
+                    <th>Téléphone</th>
+                    <td>{{ participation.tel }}</td>
+                </tr>
+                <tr style="color: white;">
+                    <th>Date</th>
+                    <td>{{ participation.date ? participation.date|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <a href="{{ path('app_participation_edit', {'id': participation.id}) }}">edit</a>
+        <a href="{{ path('app_participation_index') }}" style="color: white;">retourner a la liste</a>
 
-    {{ include('participation/_delete_form.html.twig') }}
+        <a href="{{ path('app_participation_edit', {'id': participation.id}) }}" style="color: white;">modifier</a>
+
+        {{ include('participation/_delete_form.html.twig') }}
+    </body>
 {% endblock %}

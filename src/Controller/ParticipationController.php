@@ -24,6 +24,7 @@ class ParticipationController extends AbstractController
             'participations' => $participationRepository->findAll(),
         ]);
     }
+    
     #[Route('/back', name: 'app_participation_indexb', methods: ['GET'])]
     public function indexbb(ParticipationRepository $participationRepository): Response
     {
@@ -70,7 +71,7 @@ class ParticipationController extends AbstractController
             $entityManager->persist($participation);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_event_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_event_indexf', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('participation/new.html.twig', [

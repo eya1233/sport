@@ -16,10 +16,8 @@
                         <p class="card-text"><strong>Lieu:</strong> {{ event.lieu }}</p>
                         <p class="card-text"><strong>Date:</strong> {{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</p>
                         <div class="btn-group" role="group">
-                            <a href="{{ path('app_event_show', {'id': event.id}) }}" class="btn btn-primary">Show</a></br>
+                            <a href="{{ path('app_event_show', {'id': event.id}) }}" class="btn btn-primary">Show</a>
                             <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-secondary">Edit</a>
-                                {{ include('event/_delete_form.html.twig') }}
-
                         </div>
                     </div>
                 </div>
@@ -31,5 +29,5 @@
         {% endfor %}
     </div>
 
-    <a href="{{ path('app_event_new') }}" class="btn btn-primary">Create new</a>
+    <a href="{{ path('app_event_new') }}" class="btn btn-primary">Créer</a>
 {% endblock %}

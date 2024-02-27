@@ -3,9 +3,13 @@
 {% block title %}New Participation{% endblock %}
 
 {% block body %}
-    <h1>Create new Participation</h1>
+    <body style="background-color: black; color: white;">
+        <h1 style="color: white;">Participer à un événement</h1>
 
-    {{ include('participation/_form.html.twig') }}
+        {{ include('participation/_form.html.twig') }}
 
-    <a href="{{ path('app_participation_index') }}">back to list</a>
+        <a href="{{ path('app_participation_index') }}" style="color: white;"class="btn btn-success">Retourner à la liste</a>
+    </body>
 {% endblock %}
+
+

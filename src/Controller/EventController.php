@@ -24,6 +24,7 @@ class EventController extends AbstractController
             'events' => $eventRepository->findAll(),
         ]);
     }
+    
     #[Route('/home', name: 'home', methods: ['GET'])]
     public function home(EventRepository $eventRepository): Response
     {
@@ -163,4 +164,9 @@ class EventController extends AbstractController
 
         return $this->redirectToRoute('app_event_indexf', [], Response::HTTP_SEE_OTHER);
     }
+
+
+
+   
+  
 }

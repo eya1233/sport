@@ -3,41 +3,44 @@
 {% block title %}Participation index{% endblock %}
 
 {% block body %}
-    <h1>Participation index</h1>
+    <body style="background-color: black;">
+        <h1 style="color: white;">Liste des participations</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Event</th>
-                <th>Tel</th>
-                <th>Date</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for participation in participations %}
-            <tr>
-                <td>{{ participation.id }}</td>
-                <td>{{ participation.nom }}</td>
-                <td>{{ participation.prenom }}</td>
-                <td>{{ participation.event }}</td>
-                <td>{{ participation.tel }}</td>
-                <td>{{ participation.date ? participation.date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_participation_show', {'id': participation.id}) }}">show</a>
-                    <a href="{{ path('app_participation_edit', {'id': participation.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table" style="color: white;">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Event</th>
+                    <th>Tel</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for participation in participations %}
+                <tr>
+                    <td>{{ participation.id }}</td>
+                    <td>{{ participation.nom }}</td>
+                    <td>{{ participation.prenom }}</td>
+                    <td>{{ participation.event }}</td>
+                    <td>{{ participation.tel }}</td>
+                    <td>{{ participation.date ? participation.date|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>
+                        <a href="{{ path('app_participation_show', {'id': participation.id}) }}"class="btn btn-info btn-sm">Plus de détails</a>  <a href="{{ path('app_participation_edit', {'id': participation.id}) }}" class="btn btn-warning btn-sm">Modifier</a><br>
+                        <br><a href="{{ path('app_participation_delete',{'id': participation.id}) }}" style="color: white;" class="btn btn-danger">supprimer</a>
+                        
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">Pas de participation</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('app_participation_new') }}">Create new</a>
+        <a href="{{ path('app_participation_new') }}" style="color: white;" class="btn btn-success">Participer a un événement</a>
+    </body>
 {% endblock %}
